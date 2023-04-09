@@ -1,13 +1,37 @@
 function Nav() {
+    const navItems = [
+        {
+            url: "/#",
+            name: "Home"
+        },
+        {
+            url: "/#",
+            name: "About"
+        },
+        {
+            url: "/#",
+            name: "Menu"
+        },
+        {
+            url: "/#",
+            name: "Reservations"
+        },
+        {
+            url: "/#",
+            name: "Order Online"
+        },
+        {
+            url: "/#",
+            name: "Login"
+        },
+    ];
+
     return (
-      <nav>
-        <ul>
-            <li><a href="/#">Home</a></li>
-            <li><a href="/#">About</a></li>
-            <li><a href="/#">Menu</a></li>
-            <li><a href="/#">Reservations</a></li>
-            <li><a href="/#">Order Online</a></li>
-            <li><a href="/#">Login</a></li>
+      <nav className="nav">
+        <ul className="nav__list">
+            { navItems.map(({url, name}) => (
+                <li className="nav__item"><a href={url}>{name}</a></li>
+            ))}
         </ul>
       </nav>
     );

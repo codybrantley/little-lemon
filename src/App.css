@@ -1,38 +1,93 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Karla&family=Markazi+Text:wght@500&display=swap');
+
+:root {
+  --primary-color-main: #495E57;
+  --primary-color-offset: #F4CE14;
+  --secondary-color-main: #EE9972;
+  --secondary-color-offset: #FBDABB;
+  --highlight-color-light: #EDEFEE;
+  --highlight-color-shade: #333333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Flex Grid */
+
+.container {
+  max-width: 1140px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.row {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
 }
 
-.App-link {
-  color: #61dafb;
+.row > * {
+  flex: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media all and (max-width: 1325px) {
+  .container {
+    max-width: 800px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .row {
+    flex-direction: column;
+    text-align: center;
   }
+}
+
+/* Text */
+
+h1,
+h2,
+h3 {
+  font-family: 'Markazi Text', serif;
+  margin: 0;
+}
+
+h1 {
+  font-size: 46pt;
+}
+
+h3 {
+  font-size: 40pt;
+  font-weight: normal;
+  line-height: 0.8;
+}
+
+p,
+span,
+button {
+  font-family: 'Karla', sans-serif;
+}
+
+p {
+  font-size: 16pt;
+  line-height: 1.5;
+}
+
+.text__subtitle {
+  font-size: 40pt;
+}
+
+.text__lead {
+  font-weight: 600;
+}
+
+/* Button & Input */
+
+button {
+  border: none;
+  border-radius: 12px;
+  text-decoration: none;
+  padding: 8px 20px;
+  background-color: var(--primary-color-offset);
+  font-weight: bold;
+  font-size: 16pt;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #f6d845;
 }
