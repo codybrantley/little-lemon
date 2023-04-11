@@ -1,0 +1,26 @@
+.header__nav {
+    line-height: 40px;
+    margin: 0 0 0 auto;
+}
+
+.header__nav_list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+@media all and (min-width: 1325px) {
+    .header__nav_list {
+        text-align: right;
+    }
+}
+
+.header__nav_item {
+    display: inline;
+    margin-left: 20px;
+    font-size: 14pt;
+}
+
+.header__nav_item > .active {
+    color: var(--primary-color-offset);
+}

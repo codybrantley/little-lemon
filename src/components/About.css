@@ -1,0 +1,32 @@
+.about {
+    padding: 60px 35px;
+}
+
+.about__image_container {
+    position: relative;
+    height: 420px;
+}
+
+.about__image {
+    position: absolute;
+    max-width: 70%;
+    border-radius: 16px;
+}
+
+.about__image_left {
+    z-index: 20;
+    top: 150px;
+    left: 0;
+}
+
+.about__image_right {
+    z-index: 10;
+    top: 0;
+    right: 0;
+}
+
+@media all and (max-width: 1325px) {
+    .about__image_container {
+        height: 525px;
+    }
+}

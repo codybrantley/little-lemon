@@ -1,40 +1,60 @@
-function Nav() {
+import './Nav.css';
+import { NavLink, Link } from 'react-router-dom';
+
+function Nav(props) {
+    const navigationType = (props.navigationType === "header") ? "header" : "other";
     const navItems = [
         {
-            url: "/#",
+            url: "/",
             name: "Home"
         },
         {
-            url: "/#",
+            url: "/about",
             name: "About"
         },
         {
-            url: "/#",
+            url: "/menu",
             name: "Menu"
         },
         {
-            url: "/#",
+            url: "/reservations",
             name: "Reservations"
         },
         {
-            url: "/#",
+            url: "/order",
             name: "Order Online"
         },
         {
-            url: "/#",
+            url: "/login",
             name: "Login"
         },
     ];
 
-    return (
-      <nav className="nav">
-        <ul className="nav__list">
-            { navItems.map(({url, name}) => (
-                <li className="nav__item"><a href={url}>{name}</a></li>
-            ))}
-        </ul>
-      </nav>
-    );
+    if (navigationType === "header") {
+        return (
+            <nav className="header__nav">
+              <ul className="header__nav_list">
+                  { navItems.map(({url, name}) => (
+                      <li className="header__nav_item">
+                          <NavLink to={url}>{name}</NavLink>
+                      </li>
+                  ))}
+              </ul>
+            </nav>
+        );
+    } else {
+        return (
+            <nav className="nav">
+              <ul className="nav__list" {...props}>
+                  { navItems.map(({url, name}) => (
+                      <li className="nav__item">
+                          <Link to={url}>{name}</Link>
+                      </li>
+                  ))}
+              </ul>
+            </nav>
+        );
+    }
 }
 
 export default Nav;

@@ -1,0 +1,46 @@
+.hero {
+    background-color: var(--primary-color-main);
+    padding: 40px 0;
+    color: #FFFFFF;
+}
+
+.hero__heading {
+    color: var(--primary-color-offset);
+    line-height: 0.9;
+}
+
+.hero__image_container {
+    max-width: 425px;
+    max-height: 325px;
+}
+
+@media all and (min-width: 1325px) {
+    .hero__description {
+        max-width: 350px;
+    }
+
+    .hero__image_container {
+        margin: 0 0 0 auto;
+    }
+}
+
+@media all and (max-width: 1325px) {
+    .hero__description {
+        padding: 0 15px;
+    }
+
+    .hero__image_container {
+        margin: 40px auto;
+    }
+}
+
+@media all and (min-width: 954px) and (max-width: 1325px) {
+    .hero__description {
+        padding: 0 60px;
+    }
+}
+
+.hero__image {
+    border-radius: 16px;
+    max-width: 100%;
+}

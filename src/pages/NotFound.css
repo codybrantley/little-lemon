@@ -1,0 +1,8 @@
+.notfound {
+    margin: 60px 0;
+    text-align: center;
+}
+
+.notfound__link {
+    text-decoration: underline;
+}

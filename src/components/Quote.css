@@ -1,0 +1,45 @@
+.quote {
+    background-color: #EFEFEE;
+    padding: 20px 10px;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.quote__image {
+    display: block;
+    border-radius: 50%;
+    margin: 10px auto;
+}
+
+.quote__rating {
+    color: var(--primary-color-offset);
+}
+
+.quote__message {
+    font-style: italic;
+    margin: 0;
+    quotes: '“' '”';
+}
+
+.quote__message::before,
+.quote__message::after {
+    font-size: 16pt;
+    font-weight: bold;
+    color: var(--primary-color-main);
+    line-height: 0.8;
+}
+
+.quote__message::before {
+    content: open-quote;
+}
+
+.quote__message::after {
+    content: close-quote;
+}
+
+@media all and (max-width: 1325px) {
+    .quote {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}

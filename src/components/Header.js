@@ -11,7 +11,7 @@ function Header() {
                     <img className="header__logo" src={Logo} alt="Little Lemon" />
                 </div>
                 <div>
-                    <Nav />
+                    <Nav navigationType="header" />
                 </div>
             </div>
         </div>
