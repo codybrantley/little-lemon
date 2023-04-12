@@ -22,7 +22,7 @@
   flex-direction: row;
 }
 
-.row > * {
+.row>* {
   flex: 1;
 }
 
@@ -67,7 +67,8 @@ h4 {
 }
 
 p,
-button {
+button,
+label {
   font-family: 'Karla', sans-serif;
 }
 
@@ -96,30 +97,55 @@ a:not(.button):hover {
 
 .button {
   display: table;
-	border: none;
-	border-radius: 18px;
-	text-decoration: none;
-	background-color: var(--primary-color-offset);
-	font-weight: bold;
-	font-size: 16pt;
+  border: none;
+  border-radius: 18px;
+  text-decoration: none;
+  background-color: var(--primary-color-offset);
+  font-weight: bold;
+  font-size: 16pt;
 }
 
 .button:hover {
-	cursor: pointer;
-	background-color: #f6d845;
+  cursor: pointer;
+  background-color: #f6d845;
+}
+
+input,
+select,
+textarea {
+  border: 2px solid var(--primary-color-main);
+  border-radius: 16px;
+  padding: 12px 20px;
+  -ms-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
 }
 
 @media all and (max-width: 1325px) {
-	.button {
+  .button {
     margin-left: auto;
     margin-right: auto;
-		padding: 18px 34px;
-	}
+    padding: 18px 34px;
+  }
+
+  input,
+  select,
+  textarea {
+    display: flex;
+    width: calc(100% - 42px);
+  }
 }
 
 @media all and (min-width: 1325px) {
-	.button {
-		display: table;
+  .button {
+    display: table;
     padding: 10px 26px;
-	}
+  }
+}
+
+datalist {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

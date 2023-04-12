@@ -35,7 +35,7 @@ function Nav(props) {
             <nav className="header__nav">
               <ul className="header__nav_list">
                   { navItems.map(({url, name}) => (
-                      <li className="header__nav_item">
+                      <li key={name} className="header__nav_item">
                           <NavLink to={url}>{name}</NavLink>
                       </li>
                   ))}
@@ -47,7 +47,7 @@ function Nav(props) {
             <nav className="nav">
               <ul className="nav__list" {...props}>
                   { navItems.map(({url, name}) => (
-                      <li className="nav__item">
+                      <li key={name} className="nav__item">
                           <Link to={url}>{name}</Link>
                       </li>
                   ))}
