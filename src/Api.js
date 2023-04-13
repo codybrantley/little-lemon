@@ -9,15 +9,14 @@ const seededRandom = function (seed) {
 
 const fetchAPI = function(date) {
     let result = [];
-    date = new Date(date);
     let random = seededRandom(date.getDate());
 
-    for(let i = 17; i <= 23; i++) {
+    for(let i = 6; i <= 10; i++) {
         if(random() < 0.5) {
-            result.push(i + ':00');
+            result.push(i + ':00 PM');
         }
         if(random() < 0.5) {
-            result.push(i + ':30');
+            result.push(i + ':30 PM');
         }
     }
     return result;

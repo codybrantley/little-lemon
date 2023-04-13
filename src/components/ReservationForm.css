@@ -1,0 +1,36 @@
+.reservation__form {
+    padding: 60px 0;
+}
+
+.reservation__input_container {
+    margin-bottom: 20px;
+}
+
+.reservation__label,
+.reservation__input {
+    display: block;
+}
+
+.reservation__label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+@media all and (max-width: 1325px) {
+    .reservation__form {
+        display: flex;
+        flex-direction: column;
+        padding: 60px;
+    }
+
+    .reservation__submit {
+        margin-top: 20px;
+        width: 100%;
+    }
+}
+
+.reservation__range_bubble {
+    background-color: #999999;
+    padding: 4px 9px;
+    border-radius: 50%;
+}
