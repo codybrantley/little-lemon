@@ -29,8 +29,10 @@
     }
 }
 
-.reservation__range_bubble {
-    background-color: #999999;
-    padding: 4px 9px;
-    border-radius: 50%;
+.reservation__errors {
+    display: table;
+    background-color: #f82020a9;
+    padding: 5px 10px;
+    margin: 10px 0;
+    border-radius: 16px;
 }
