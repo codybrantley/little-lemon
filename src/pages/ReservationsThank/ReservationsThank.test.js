@@ -21,8 +21,9 @@ describe('Reservation Thank You Page', () => {
     });
 
     test("page is shown when state is defined", async () => {
+        const todaysDate = new Date().toISOString().split('T')[0];
         const formData = {
-            date: "04/12/2023",
+            date: todaysDate,
             time: '07:00 PM',
             guests: 1,
             occasion: 'Night Out',

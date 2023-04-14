@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import '../Reservations/Reservations.css';
 import './ReservationsThank.css';
 
 function ReservationsThank() {
@@ -16,6 +17,16 @@ function ReservationsThank() {
     if (state) {
         const dateString = `${state.date} ${state.time}`;
         const date = new Date(dateString).toLocaleDateString('en-us', { weekday: "long", year: "numeric", month: "short", day: "numeric", timeZone: 'EST'});
+        const OccasionEmoji = () => {
+            switch(state.occasion) {
+                case 'Night Out':
+                    return '🍷';
+                case 'Birthday':
+                    return '🎉';
+                case 'Anniversary':
+                    return '💞';
+            }
+        };
 
         return (
             <>
@@ -40,7 +51,7 @@ function ReservationsThank() {
                                 <li><b>Date:</b> {date}</li>
                                 <li><b>Time:</b> {state.time}</li>
                                 <li><b>Party Size:</b> {state.guests}</li>
-                                <li><b>Occassion:</b> {state.occassion}</li>
+                                <li><b>Occasion:</b> {state.occasion} <OccasionEmoji /></li>
                                 <li><b>Table Preferences:</b> {state.tablePreferences ? state.tablePreferences : "None"}</li>
                             </ul>
                             <p className="reservations__details_p">You will receive a confirmation email shortly.</p>

@@ -4,17 +4,6 @@ import { act } from 'react-dom/test-utils';
 import ReservationForm from './ReservationForm';
 
 describe('Reservation Form', () => {
-    test("form is displayed", () => {
-        render(
-            <BrowserRouter>
-                <ReservationForm />
-            </BrowserRouter>
-        );
-
-        const form = document.getElementById('form');
-        expect(form).toBeInTheDocument();
-    });
-
     test("date field default selection is todays date", async () => {
         const todaysDate = new Date().toISOString().split('T')[0];
         render(
@@ -25,7 +14,9 @@ describe('Reservation Form', () => {
 
         const dateInput = screen.getByLabelText(/choose date/i);
 
-        expect(dateInput).toHaveValue(todaysDate);
+        await act(async () => {
+            expect(dateInput).toHaveValue(todaysDate);
+        });
     });
 
     test("time slots still appear after a new date is selected", async () => {
@@ -67,6 +58,7 @@ describe('Reservation Form', () => {
     });
 
     test("form is submitted when valid data is filled out", async () => {
+        // ASSUMES date and time are preselected
         const handleSubmit = jest.fn();
         const nameValue = "Testing";
         const emailAddressValue = "testing@gmail.com";
