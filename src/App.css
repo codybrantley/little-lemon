@@ -3,10 +3,14 @@
 :root {
   --primary-color-main: #495E57;
   --primary-color-offset: #F4CE14;
+  --primary-color-hover: #f6d845;
   --secondary-color-main: #EE9972;
   --secondary-color-offset: #FBDABB;
+  --highlight-color-white: #FFFFFF;
   --highlight-color-light: #EDEFEE;
   --highlight-color-shade: #333333;
+  --highlight-color-dark: #000000;
+  --highlight-color-invalid: #f82020a9;
 }
 
 /* Flex Grid */
@@ -87,12 +91,12 @@ p {
 
 a {
   text-decoration: none;
-  color: #000000;
+  color: var(--highlight-color-dark);
   font-weight: bold;
 }
 
 a:not(.button):hover {
-  color: #666666;
+  color: var(--highlight-color-shade);
 }
 
 .button {
@@ -107,13 +111,14 @@ a:not(.button):hover {
 
 .button:hover {
   cursor: pointer;
-  background-color: #f6d845;
+  background-color: var(--primary-color-hover);
 }
 
 input,
 select,
 textarea {
   border: 2px solid var(--primary-color-main);
+  background-color: var(--highlight-color-light);
   border-radius: 16px;
   padding: 12px 20px;
   -ms-box-sizing: content-box;
@@ -141,6 +146,10 @@ textarea {
   .button {
     display: table;
     padding: 10px 26px;
+  }
+
+  textarea {
+    width: 400px;
   }
 }
 

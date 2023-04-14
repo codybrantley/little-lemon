@@ -9,7 +9,7 @@
 }
 
 .card__content {
-    background-color: #EDEFEE;
+    background-color: var(--highlight-color-light);
     padding: 20px 30px;
     border-radius: 0 0 16px 16px;
 }
@@ -51,8 +51,8 @@
     .card__link {
         display: list-item;
         list-style-type: none;
-        background-color: #000000;
-        color: #FFFFFF;
+        background-color: var(--highlight-color-dark);
+        color: var(--highlight-color-white);
         padding: 18px 34px;
         border-radius: 16px;
     }

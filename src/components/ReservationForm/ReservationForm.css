@@ -30,12 +30,12 @@
 }
 
 .reservation__invalid {
-    border-color: #f82020a9;
+    border-color: var(--highlight-color-invalid);
 }
 
 .reservation__errors {
     display: table;
-    background-color: #f82020a9;
+    background-color: var(--highlight-color-invalid);
     padding: 5px 10px;
     margin: 10px 0;
     border-radius: 16px;

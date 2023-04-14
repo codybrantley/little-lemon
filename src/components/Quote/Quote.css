@@ -1,5 +1,5 @@
 .quote {
-    background-color: #EFEFEE;
+    background-color: var(--highlight-color-light);
     padding: 20px 10px;
     border-radius: 16px;
     text-align: center;

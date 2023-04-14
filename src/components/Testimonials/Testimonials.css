@@ -7,7 +7,7 @@
 .testimonials_heading {
     text-align: center;
     margin-bottom: 60px;
-    color: #FFFFFF;
+    color: var(--highlight-color-white);
 }
 
 .testimonials__row {

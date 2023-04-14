@@ -1,5 +1,5 @@
 .reservations__heading {
     background-color: var(--primary-color-main);
     padding: 40px 0;
-    color: #FFFFFF;
+    color: var(--highlight-color-white);
 }
