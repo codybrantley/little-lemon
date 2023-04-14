@@ -1,20 +1,19 @@
-import './Reservations.css';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import './ReservationsThank.css';
 
-function Reservations() {
+function ReservationsThank() {
     const { state } = useLocation();
     const navigate = useNavigate();
 
     useEffect(() => {
         if (!state)
             navigate('/');
-    }, []);
+    }, [state]);
 
     if (state) {
-        const firstName = (state.name.split(' ').length > 1) ? state.name.split(' ')[0] : state.name;
         const dateString = `${state.date} ${state.time}`;
         const date = new Date(dateString).toLocaleDateString('en-us', { weekday: "long", year: "numeric", month: "short", day: "numeric", timeZone: 'EST'});
 
@@ -25,7 +24,7 @@ function Reservations() {
                 <div className="container">
                     <div className="row">
                         <div>
-                            <h2>{ firstName }, your reservation is set.</h2>
+                            <h2>Your reservation is set.</h2>
                             <h4>We can't wait to see you!</h4>
                         </div>
                     </div>
@@ -55,4 +54,4 @@ function Reservations() {
     }
 }
 
-export default Reservations;
+export default ReservationsThank;

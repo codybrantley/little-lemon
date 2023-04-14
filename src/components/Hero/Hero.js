@@ -1,6 +1,6 @@
-import './Hero.css';
-import RestaurantFood from '../images/restaurantfood.png';
 import { Link } from 'react-router-dom';
+import RestaurantFood from '../../images/restaurantfood.png';
+import './Hero.css';
 
 function Hero() {
     return (

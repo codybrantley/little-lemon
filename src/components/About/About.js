@@ -1,9 +1,8 @@
+import MarioAndAdrianA from '../../images/Mario_and_Adrian_A.png';
+import Restaurant from '../../images/restaurant.png';
 import './About.css';
-import MarioAndAdrianA from '../images/Mario_and_Adrian_A.png';
-import Restaurant from '../images/restaurant.png';
 
 function About() {
-
     return (
       <div className="about">
         <div className="container">

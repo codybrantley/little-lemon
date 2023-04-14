@@ -29,6 +29,10 @@
     }
 }
 
+.reservation__invalid {
+    border-color: #f82020a9;
+}
+
 .reservation__errors {
     display: table;
     background-color: #f82020a9;

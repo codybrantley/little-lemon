@@ -1,5 +1,5 @@
-import './Nav.css';
 import { NavLink, Link } from 'react-router-dom';
+import './Nav.css';
 
 function Nav(props) {
     const navigationType = (props.navigationType === "header") ? "header" : "other";

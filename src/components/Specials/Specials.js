@@ -1,9 +1,9 @@
-import './Specials.css';
-import GreekSalad from '../images/greek_salad.png';
-import Bruchetta from '../images/bruchetta.png';
-import LemonDesert from '../images/lemon_dessert.png';
-import Card from './Card';
 import { Link } from 'react-router-dom';
+import Card from '../Card';
+import GreekSalad from '../../images/greek_salad.png';
+import Bruchetta from '../../images/bruchetta.png';
+import LemonDesert from '../../images/lemon_dessert.png';
+import './Specials.css';
 
 function Specials() {
     const specials = [
@@ -43,7 +43,7 @@ function Specials() {
                 </div>
                 <div className="specials__items row">
                     { specials.map((special) => (
-                        <Card {...special} />
+                        <Card key={special.item} {...special} />
                     ))}
                 </div>
             </div>

@@ -1,9 +1,9 @@
+import Quote from '../Quote';
+import AmyImage from '../../images/testimonials/amy.jpg';
+import CharlieImage from '../../images/testimonials/charlie.jpg';
+import GavinImage from '../../images/testimonials/gavin.jpg';
+import MelanieImage from '../../images/testimonials/melanie.jpg';
 import './Testimonials.css';
-import AmyImage from '../images/testimonials/amy.jpg';
-import CharlieImage from '../images/testimonials/charlie.jpg';
-import GavinImage from '../images/testimonials/gavin.jpg';
-import MelanieImage from '../images/testimonials/melanie.jpg';
-import Quote from './Quote';
 
 function Testimonials() {
     const quotes = [
@@ -39,7 +39,7 @@ function Testimonials() {
                 <h2 className="testimonials_heading">Testimonials</h2>
                 <div className="testimonials__row row">
                 { quotes.map((quote) => (
-                    <Quote {...quote} />
+                    <Quote key={quote.name} {...quote} />
                 ))}
                 </div>
             </div>
