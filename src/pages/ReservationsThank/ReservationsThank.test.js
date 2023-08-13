@@ -1,45 +1,51 @@
-import { render, screen } from '@testing-library/react';
-import { BrowserRouter, MemoryRouter } from 'react-router-dom';
-import ReservationsThank from './ReservationsThank';
+import { render, screen } from '@testing-library/react'
+import { BrowserRouter, MemoryRouter } from 'react-router-dom'
+import ReservationsThank from './ReservationsThank'
 
-const mockNavigate = jest.fn();
+const mockNavigate = jest.fn()
 
 jest.mock('react-router-dom', () => ({
-    ...jest.requireActual('react-router-dom'),
-    useNavigate: () => mockNavigate,
-}));
+  ...jest.requireActual('react-router-dom'),
+  useNavigate: () => mockNavigate,
+}))
 
 describe('Reservation Thank You Page', () => {
-    test("redirection happens when no state is defined", async () => {
-        render(
-            <BrowserRouter>
-                <ReservationsThank />
-            </BrowserRouter>
-        );
+  test('error page shows when no state is defined', async () => {
+    render(
+      <BrowserRouter>
+        <ReservationsThank />
+      </BrowserRouter>
+    )
 
-        expect(mockNavigate).toHaveBeenCalled();
-    });
+    const heading = screen.getByRole('heading', {
+      name: /uh-oh! you haven't set a reservation yet, or an error occured\./i,
+    })
 
-    test("page is shown when state is defined", async () => {
-        const todaysDate = new Date().toISOString().split('T')[0];
-        const formData = {
-            date: todaysDate,
-            time: '07:00 PM',
-            guests: 1,
-            occasion: 'Night Out',
-            tablePreferences: '',
-            name: 'Testing Person',
-            emailAddress: 'testing@test.com',
-        };
+    expect(heading).toBeInTheDocument()
+  })
 
-        render(
-            <MemoryRouter initialEntries={[{ state: formData }]}>
-                <ReservationsThank />
-            </MemoryRouter>
-        );
+  test('page is shown when state is defined', async () => {
+    const todaysDate = new Date().toISOString().split('T')[0]
+    const formData = {
+      date: todaysDate,
+      time: '07:00 PM',
+      guests: 1,
+      occasion: 'Night Out',
+      tablePreferences: '',
+      name: 'Testing Person',
+      emailAddress: 'testing@test.com',
+    }
 
-        const heading = screen.getByRole('heading', { name: /your reservation is set\./i });
+    render(
+      <MemoryRouter initialEntries={[{ state: formData }]}>
+        <ReservationsThank />
+      </MemoryRouter>
+    )
 
-        expect(heading).toBeInTheDocument();
-    });
-});
+    const heading = screen.getByRole('heading', {
+      name: /your reservation is set\./i,
+    })
+
+    expect(heading).toBeInTheDocument()
+  })
+})

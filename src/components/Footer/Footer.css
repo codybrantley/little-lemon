@@ -21,4 +21,8 @@
     .footer__links {
         margin: 15px 0;
     }
+
+    .footer__links>li {
+        margin: 10px 0;
+    }
 }
